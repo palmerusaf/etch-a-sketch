@@ -1,0 +1,9 @@
+.grid-element {
+  background-color: black;
+}
+
+#container {
+  display: grid;
+  width: fit-content;
+  height: fit-content;
+}
