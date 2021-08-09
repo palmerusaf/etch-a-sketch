@@ -1,9 +1,10 @@
 .grid-element {
-  background-color: black;
+  background-color: orange;
 }
 
 #container {
-  display: grid;
-  width: fit-content;
-  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  padding-top: 100vw;
 }
