@@ -9,33 +9,41 @@ function resetButton() {
     resetButton.classList.add("resetButton");
     buttonContainer.appendChild(resetButton);
     resetButton.textContent = "Reset Button";
+    resetButton.addEventListener('click', resetEvent);
 
     // place reset button
     const containerParent = container.parentNode;
     containerParent.insertBefore(buttonContainer, container);
 }
 
+// complete all reset actions
+function resetEvent() {
+    resetGrid();
+    buildGrid(promptForNewGrid());
+}
+
 // reset grid, used by resetButton()
 function resetGrid() {
-    let elemetNodelist = container.getElementsByClassName("gridElement");
-    let elementArray = Array.from(elemetNodelist);
+    let elementNodeList = container.getElementsByClassName("gridElement");
+    let elementArray = Array.from(elementNodeList);
     for (let i = 0; i < elementArray.length; i++) {
         container.removeChild(elementArray[i]);
     }
 }
 
-// ask user for diminsions for next grid
+// ask user for dimensions for next grid
 function promptForNewGrid() {
-
+    let numElements = prompt("Enter a size for your new canvas.");
+    // Catch input that's not an int < 100
+    while (!Number.isInteger(+numElements) || numElements > 100 || isNaN(numElements))
+        numElements = prompt(
+            "Alert! You must enter a whole number no greater than 100."
+        );
+    return numElements;
 }
 
 // build grid of divs default to 16x16
 function buildGrid(numElements = 16) {
-    // Catch input that's not an int < 101
-    while (numElements > 101 || isNotInteger(numElements))
-        numElements = prompt(
-            "Alert! You must enter a whole number no greater than 100."
-        );
     for (let i = 0; i < numElements; i++) {
         // FOR TESTING
         let testNum = 0;
@@ -67,9 +75,5 @@ function paintElementOnHover(div) {
     div.addEventListener('mouseover', () => div.style.backgroundColor = "red", { once: true })
 }
 
-// For use to make prompt while conditional more readable
-function isNotInteger(input) {
-    return isNaN(input) ? true : !Number.isInteger(input);
-}
 resetButton();
 buildGrid();
