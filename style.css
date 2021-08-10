@@ -1,9 +1,9 @@
 .gridElement {
-  background-color: orange;
+  background-color: white;
 }
 
 .resetButton:hover{
-  background-color: red;
+  background-color: white;
 }
 
 .buttonContainer{

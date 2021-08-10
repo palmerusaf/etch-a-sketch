@@ -45,17 +45,11 @@ function promptForNewGrid() {
 // build grid of divs default to 16x16
 function buildGrid(numElements = 16) {
     for (let i = 0; i < numElements; i++) {
-        // FOR TESTING
-        let testNum = 0;
-        // FOR TESTING
         for (let j = 0; j < numElements; j++) {
             const div = document.createElement("div");
             div.classList.add("gridElement");
             setElementSize(div, numElements);
             paintElementOnHover(div);
-            // FOR TESTING
-            div.textContent = `${++testNum}`;
-            // FOR TESTING
             container.append(div);
         }
     }
@@ -72,7 +66,7 @@ function setElementSize(div, numElements) {
 
 // paint each element when hovered over
 function paintElementOnHover(div) {
-    div.addEventListener('mouseover', () => div.style.backgroundColor = "red", { once: true })
+    div.addEventListener('mouseover', () => div.style.backgroundColor = "black", { once: true })
 }
 
 resetButton();
