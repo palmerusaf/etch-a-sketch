@@ -1,16 +1,31 @@
 // get container to hold div elements
 const container = document.getElementById("container");
 
-// reset grid when pressed
+// place button before grid in its own container
 function resetButton() {
-const resetButton = document.createElement("button");
-resetButton.textContent = "Reset Button"
-const containerParent = container.parentNode;
-containerParent.insertBefore(resetButton, container);
+    const buttonContainer = document.createElement("div");
+    buttonContainer.classList.add("buttonContainer");
+    const resetButton = document.createElement("button");
+    resetButton.classList.add("resetButton");
+    buttonContainer.appendChild(resetButton);
+    resetButton.textContent = "Reset Button";
+
+    // place reset button
+    const containerParent = container.parentNode;
+    containerParent.insertBefore(buttonContainer, container);
+}
+
+// reset grid, used by resetButton()
+function resetGrid() {
+    let elemetNodelist = container.getElementsByClassName("gridElement");
+    let elementArray = Array.from(elemetNodelist);
+    for (let i = 0; i < elementArray.length; i++) {
+        container.removeChild(elementArray[i]);
+    }
 }
 
 // ask user for diminsions for next grid
-function promptForNewGrid(){
+function promptForNewGrid() {
 
 }
 
@@ -27,7 +42,7 @@ function buildGrid(numElements = 16) {
         // FOR TESTING
         for (let j = 0; j < numElements; j++) {
             const div = document.createElement("div");
-            div.classList.add("grid-element");
+            div.classList.add("gridElement");
             setElementSize(div, numElements);
             paintElementOnHover(div);
             // FOR TESTING
@@ -49,7 +64,7 @@ function setElementSize(div, numElements) {
 
 // paint each element when hovered over
 function paintElementOnHover(div) {
-        div.addEventListener('mouseover', () => div.style.backgroundColor = "red",{once: true})
+    div.addEventListener('mouseover', () => div.style.backgroundColor = "red", { once: true })
 }
 
 // For use to make prompt while conditional more readable

@@ -1,5 +1,14 @@
-.grid-element {
+.gridElement {
   background-color: orange;
+}
+
+.resetButton:hover{
+  background-color: red;
+}
+
+.buttonContainer{
+  display: flex;
+  justify-content: right;
 }
 
 #container {
