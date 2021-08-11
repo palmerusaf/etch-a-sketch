@@ -61,12 +61,13 @@ function buildGrid(numElements = 16) {
       div.classList.add("gridElement");
       setElementSize(div, numElements);
       paintElementRandomColor(div);
+      fadeElement(div);
       container.append(div);
     }
   }
 }
 
-// set size of div elements based on amount and view width
+// set size of div elements based on amount of element and view width
 function setElementSize(div, numElements) {
   let elementWidth = 100 / numElements;
   let elementHeight = elementWidth;
@@ -78,13 +79,23 @@ function setElementSize(div, numElements) {
 function paintElementRandomColor(div) {
   div.addEventListener(
     "mouseover",
-    () => (div.style.backgroundColor = randomColorGenerator()));
+    () => (div.style.backgroundColor = randomColorGenerator())
+  );
 }
 
 // generate random color
 function randomColorGenerator() {
   randPercent = () => `${Math.floor(Math.random() * 101)}%`;
   return `rgb(${randPercent()},${randPercent()},${randPercent()})`;
+}
+
+// fade each element by 10% each hover
+function fadeElement(div) {
+  let level = 100;
+  div.addEventListener(
+    "mouseover",
+    () => div.style.filter = `brightness(${(level -= 10)}%)`
+  );
 }
 
 buildResetButton();
