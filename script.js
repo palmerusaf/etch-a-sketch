@@ -1,4 +1,4 @@
-// get container to hold div elements
+// get container to hold div grid elements
 const container = document.getElementById("container");
 
 // place button before grid in its own container
@@ -60,7 +60,7 @@ function buildGrid(numElements = 16) {
       const div = document.createElement("div");
       div.classList.add("gridElement");
       setElementSize(div, numElements);
-      paintElementOnHover(div);
+      paintElementRandomColor(div);
       container.append(div);
     }
   }
@@ -75,12 +75,16 @@ function setElementSize(div, numElements) {
 }
 
 // paint each element when hovered over
-function paintElementOnHover(div) {
+function paintElementRandomColor(div) {
   div.addEventListener(
     "mouseover",
-    () => (div.style.backgroundColor = "black"),
-    { once: true }
-  );
+    () => (div.style.backgroundColor = randomColorGenerator()));
+}
+
+// generate random color
+function randomColorGenerator() {
+  randPercent = () => `${Math.floor(Math.random() * 101)}%`;
+  return `rgb(${randPercent()},${randPercent()},${randPercent()})`;
 }
 
 buildResetButton();
