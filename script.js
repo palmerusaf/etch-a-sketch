@@ -48,8 +48,8 @@ function rejectInvalidInput(numElements) {
     !Number.isInteger(+numElements) ||
     numElements > 100 ||
     isNaN(numElements) ||
-    numElements === "" ||
-    numElements === null
+    numElements == "" ||
+    numElements == null
   );
 }
 
