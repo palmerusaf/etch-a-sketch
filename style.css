@@ -1,14 +1,39 @@
+body{
+  background-color: #FE9B5B;
+}
+
 .gridElement {
-  background-color: white;
+  background-color: inherit;
 }
 
-.resetButton:hover{
-  background-color: white;
+.buttonContainer {
+  padding-bottom: 1vw;
+  background-color: inherit;
 }
 
-.buttonContainer{
+.resetButton {
+  font-size: 3vw;
+  padding: 0.5vw;
+  background-color: #e57e32;
+  color: #a94b07;
+  border: solid;
+  border-radius: 2vw;
+}
+
+.resetButton:hover {
+  background-color: #ff933e;
+}
+
+.buttonContainer {
   display: flex;
   justify-content: right;
+}
+
+#heading h1{
+color: #783000;
+font-family: Dyuthi;
+font-size: 6vw;
+margin-top: 1.5vw;
 }
 
 #container {
@@ -16,5 +41,4 @@
   flex-wrap: wrap;
   width: 100vw;
   height: 100vw;
-  background-color: white;
 }
