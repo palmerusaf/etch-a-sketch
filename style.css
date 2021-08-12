@@ -7,17 +7,18 @@ body{
 }
 
 .buttonContainer {
-  padding-bottom: 1vw;
+  padding-bottom: 1vh;
   background-color: inherit;
 }
 
 .resetButton {
-  font-size: 3vw;
-  padding: 0.5vw;
+  font-size: 3vh;
+  padding: 0.5vh;
   background-color: #e57e32;
   color: #a94b07;
   border: solid;
-  border-radius: 2vw;
+  height: fit-content;
+  border-radius: 2vh;
 }
 
 .resetButton:hover {
@@ -27,18 +28,23 @@ body{
 .buttonContainer {
   display: flex;
   justify-content: right;
+  height: 6%;
 }
 
 #heading h1{
 color: #783000;
 font-family: Dyuthi;
-font-size: 6vw;
-margin-top: 1.5vw;
+font-size: 6vh;
+margin-top: 1.5vh;
 }
 
 #container {
   display: flex;
   flex-wrap: wrap;
-  width: 96vw;
-  height: 95vw;
+  width: 95.5vw;
+  height: 75vh;
+  color: #a94b07;
+  border: solid;
+  border-width: 1vw;
+  border-radius: 1vw;
 }
