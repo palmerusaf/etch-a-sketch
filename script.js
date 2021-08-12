@@ -71,8 +71,8 @@ function buildGrid(numElements = 16) {
 function setElementSize(div, numElements) {
   let elementWidth = 100 / numElements;
   let elementHeight = elementWidth;
-  div.style.width = `${elementWidth}vw`;
-  div.style.height = `${elementHeight}vw`;
+  div.style.width = `${elementWidth}%`;
+  div.style.height = `${elementHeight}%`;
 }
 
 // paint each element when hovered over

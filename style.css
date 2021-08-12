@@ -39,6 +39,6 @@ margin-top: 1.5vw;
 #container {
   display: flex;
   flex-wrap: wrap;
-  width: 100vw;
-  height: 100vw;
+  width: 96vw;
+  height: 95vw;
 }
